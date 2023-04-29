@@ -27,7 +27,7 @@ if(!isset($_SESSION['cart_p_id'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                
+
                 <?php if(!isset($_SESSION['customer'])): ?>
                     <p>
                         <a href="login.php" class="btn btn-md btn-danger"><?php echo LANG_VALUE_160; ?></a>
@@ -171,7 +171,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                     </table> 
                 </div>
 
-                
+
 
                 <div class="billing-address">
                     <div class="row">
@@ -274,7 +274,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                     </div>                    
                 </div>
 
-                
+
 
                 <div class="cart-buttons">
                     <ul>
@@ -285,7 +285,7 @@ if(!isset($_SESSION['cart_p_id'])) {
 				<div class="clear"></div>
                 <h3 class="special"><?php echo LANG_VALUE_33; ?></h3>
                 <div class="row">
-                    
+
                     	<?php
 		                $checkout_access = 1;
 		                if(
@@ -317,7 +317,7 @@ if(!isset($_SESSION['cart_p_id'])) {
 	                    	</div>
 	                	<?php else: ?>
 		                	<div class="col-md-4">
-		                		
+
 	                            <div class="row">
 
 	                                <div class="col-md-12 form-group">
@@ -332,6 +332,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                     <form class="paypal" action="<?php echo BASE_URL; ?>payment/paypal/payment_process.php" method="post" id="paypal_form" target="_blank">
                                         <input type="hidden" name="cmd" value="_xclick" />
                                         <input type="hidden" name="no_note" value="1" />
+                                        <input type="hidden" name="lc" value="UK" />
                                         <input type="hidden" name="currency_code" value="USD" />
                                         <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
 
@@ -364,15 +365,15 @@ if(!isset($_SESSION['cart_p_id'])) {
                                             <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form3">
                                         </div>
                                     </form>
-	                                
+
 	                            </div>
-		                            
-		                        
+
+
 		                    </div>
 		                <?php endif; ?>
-                        
+
                 </div>
-                
+
 
                 <?php endif; ?>
 
