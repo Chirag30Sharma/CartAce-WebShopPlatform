@@ -156,7 +156,7 @@ if (isset($_POST['form1'])) {
         $to = $_POST['cust_email'];
         
         $subject = LANG_VALUE_150;
-        $verify_link = BASE_URL.'verify.php?email='.$to.'&token='.$token;
+        $verify_link = '<a href="'.BASE_URL.'http://localhost:3000/verify.php?email='.$to.'&token='.$token.'">Click here</a>';
         $message = '
 '.LANG_VALUE_151.'<br><br>
 

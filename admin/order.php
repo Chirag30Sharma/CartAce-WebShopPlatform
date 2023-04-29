@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-
+<?php include('../Mail.php')?>
 <?php
 $error_message = '';
 if(isset($_POST['form1'])) {
@@ -98,14 +98,7 @@ Unit Price: '.$row['unit_price'].'<br>
 '.$order_detail.'
 </body></html>
 ';
-        $headers = 'From: ' . $admin_email . "\r\n" .
-                   'Reply-To: ' . $admin_email . "\r\n" .
-                   'X-Mailer: PHP/' . phpversion() . "\r\n" . 
-                   "MIME-Version: 1.0\r\n" . 
-                   "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-        // Sending email to admin                  
-        mail($to_customer, $subject_text, $message, $headers);
+        MsgSend($subject_text,$message,$to_customer);
         
         $success_message = 'Your email to customer is sent successfully.';
 

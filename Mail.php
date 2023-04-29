@@ -4,27 +4,21 @@ require 'vendor/autoload.php';
 function SendMail($subject,$body)
 {
     require 'vendor/autoload.php';
-
-    //Create an instance; passing `true` enables exceptions
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
 
     try {
-        //Server settings
-        // $mail->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'sharmachirag393@gmail.com';                     //SMTP username
-        $mail->Password   = 'bnodlimfjayczfwi';                               //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->isSMTP();                                            
+        $mail->Host       = 'smtp.gmail.com';                     
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'sharmachirag393@gmail.com';                   
+        $mail->Password   = 'bnodlimfjayczfwi';                              
+        $mail->SMTPSecure = 'tls';          
+        $mail->Port       = 587;                                    
 
-        //Recipients
         $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
-        $mail->addAddress('sharmachirag393@gmail.com');     //Add a recipient
+        $mail->addAddress('sharmachirag393@gmail.com');   
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->isHTML(true);                                  
         $mail->Subject = $subject;
         $mail->Body    = $body;
         
@@ -41,26 +35,21 @@ function Forget($subject,$body,$receipent)
 {
     require 'vendor/autoload.php';
 
-    //Create an instance; passing `true` enables exceptions
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
 
     try {
-        //Server settings
-        // $mail->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'sharmachirag393@gmail.com';                     //SMTP username
-        $mail->Password   = 'bnodlimfjayczfwi';                               //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->isSMTP();                                     
+        $mail->Host       = 'smtp.gmail.com';                     
+        $mail->SMTPAuth   = true;                                 
+        $mail->Username   = 'sharmachirag393@gmail.com';                
+        $mail->Password   = 'bnodlimfjayczfwi';                              
+        $mail->SMTPSecure = 'tls';           
+        $mail->Port       = 587;                              
 
-        //Recipients
         $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
-        $mail->addAddress($receipent);     //Add a recipient
+        $mail->addAddress($receipent);    
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->isHTML(true);                                  
         $mail->Subject = $subject;
         $mail->Body    = $body;
         
@@ -77,26 +66,52 @@ function Register($subject,$body,$receipent)
 {
     require 'vendor/autoload.php';
 
-    //Create an instance; passing `true` enables exceptions
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
 
     try {
-        //Server settings
-        // $mail->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'sharmachirag393@gmail.com';                     //SMTP username
-        $mail->Password   = 'bnodlimfjayczfwi';                               //SMTP password
-        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->isSMTP();                                           
+        $mail->Host       = 'smtp.gmail.com';                    
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'sharmachirag393@gmail.com';                     
+        $mail->Password   = 'bnodlimfjayczfwi';                              
+        $mail->SMTPSecure = 'tls';       
+        $mail->Port       = 587;                                  
 
-        //Recipients
         $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
-        $mail->addAddress($receipent);     //Add a recipient
+        $mail->addAddress($receipent);    
 
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->isHTML(true);                                 
+        $mail->Subject = $subject;
+        $mail->Body    = $body;
+        
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (\PHPMailer\PHPMailer\Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
+}
+
+function MsgSend($subject,$body,$receipent)
+{
+    require 'vendor/autoload.php';
+
+    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+
+    try {
+        $mail->isSMTP();                                           
+        $mail->Host       = 'smtp.gmail.com';                    
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'sharmachirag393@gmail.com';                     
+        $mail->Password   = 'bnodlimfjayczfwi';                              
+        $mail->SMTPSecure = 'tls';       
+        $mail->Port       = 587;                                  
+
+        $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
+        $mail->addAddress($receipent);    
+
+        $mail->isHTML(true);                                 
         $mail->Subject = $subject;
         $mail->Body    = $body;
         

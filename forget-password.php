@@ -48,7 +48,7 @@ if(isset($_POST['form1'])) {
         $statement = $pdo->prepare("UPDATE tbl_customer SET cust_token=?,cust_timestamp=? WHERE cust_email=?");
         $statement->execute(array($token,$now,strip_tags($_POST['cust_email'])));
         
-        $message = '<p>'.LANG_VALUE_142.'<br> <a href="'.BASE_URL.'reset-password.php?email='.$_POST['cust_email'].'&token='.$token.'">Click here</a>';
+        $message = '<p>'.LANG_VALUE_142.'<br> <a href="'.BASE_URL.'http://localhost:3000/reset-password.php?email='.$_POST['cust_email'].'&token='.$token.'">Click here</a>';
         
         $to      = $_POST['cust_email'];
         $subject = LANG_VALUE_143;
