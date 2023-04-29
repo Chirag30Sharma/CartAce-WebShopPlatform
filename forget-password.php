@@ -1,4 +1,5 @@
 <?php require_once('header.php'); ?>
+<?php include('Mail.php')?>
 
 <?php
 $statement = $pdo->prepare("SELECT * FROM tbl_settings WHERE id=1");
@@ -51,14 +52,8 @@ if(isset($_POST['form1'])) {
         
         $to      = $_POST['cust_email'];
         $subject = LANG_VALUE_143;
-        $headers = "From: noreply@" . BASE_URL . "\r\n" .
-                   "Reply-To: noreply@" . BASE_URL . "\r\n" .
-                   "X-Mailer: PHP/" . phpversion() . "\r\n" . 
-                   "MIME-Version: 1.0\r\n" . 
-                   "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        mail($to, $subject, $message, $headers);
-
+        Forget($subject,$message,$to);
         $success_message = $forget_password_message;
     }
 }
@@ -107,6 +102,3 @@ if(isset($_POST['form1'])) {
 </div>
 
 <?php require_once('footer.php'); ?>
-
-
-!

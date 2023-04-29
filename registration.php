@@ -1,4 +1,5 @@
 <?php require_once('header.php'); ?>
+<?php include('Mail.php')?>
 
 <?php
 $statement = $pdo->prepare("SELECT * FROM tbl_settings WHERE id=1");
@@ -161,15 +162,8 @@ if (isset($_POST['form1'])) {
 
 <a href="'.$verify_link.'">'.$verify_link.'</a>';
 
-        $headers = "From:" .$to. "\r\n" .
-                   "Reply-To: sharmachirag393@gmail.com \r\n" .
-                   "X-Mailer: PHP/" . phpversion() . "\r\n" . 
-                   "MIME-Version: 1.0\r\n" . 
-                   "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        Register($subject,$verify_link,$to);
         
-        // Sending Email
-        mail($to, $subject, $message, $headers);
-
         unset($_POST['cust_name']);
         unset($_POST['cust_cname']);
         unset($_POST['cust_email']);

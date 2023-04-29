@@ -1,5 +1,5 @@
 <?php require_once('header.php'); ?>
-
+<?php include('Mail.php')?>
 <?php
 $statement = $pdo->prepare("SELECT * FROM tbl_page WHERE id=1");
 $statement->execute();
@@ -120,15 +120,8 @@ if(isset($_POST['form_contact']))
 </table>
 </body></html>
 ';
-        $headers = 'From: ' . $visitor_email . "\r\n" .
-                   'Reply-To: ' . $admin . "\r\n" .
-                   'X-Mailer: PHP/' . phpversion() . "\r\n" . 
-                   "MIME-Version: 1.0\r\n" . 
-                   "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        // Sending email to admin                  
-        mail($to_admin, $subject, $message, $headers); 
-        
+SendMail($subject,$message);    
         $success_message = $receive_email_thank_you_message;
 
     }
