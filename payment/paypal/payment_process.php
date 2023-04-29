@@ -29,7 +29,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	// Firstly Append paypal account to querystring
 	$querystring .= "?business=".urlencode($paypal_email)."&";
 
-	// Append amount& currency (£) to quersytring so it cannot be edited in html
+	// Append amount& currency ($) to quersytring so it cannot be edited in html
 
 	//The item name and amount can be brought in dynamically by querying the $_POST['item_number'] variable.
 	$querystring .= "item_name=".urlencode($item_name)."&";
