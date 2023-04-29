@@ -10,13 +10,13 @@ function SendMail($subject,$body)
         $mail->isSMTP();                                            
         $mail->Host       = 'smtp.gmail.com';                     
         $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'sharmachirag393@gmail.com';                   
-        $mail->Password   = 'bnodlimfjayczfwi';                              
+        $mail->Username   = 'mail@gmail.com';                   
+        $mail->Password   = 'secret';                              
         $mail->SMTPSecure = 'tls';          
         $mail->Port       = 587;                                    
 
-        $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
-        $mail->addAddress('sharmachirag393@gmail.com');   
+        $mail->setFrom('mail@gmail.com', 'CartAce');
+        $mail->addAddress('mail@gmail.com');   
 
         $mail->isHTML(true);                                  
         $mail->Subject = $subject;
@@ -40,13 +40,13 @@ function Forget($subject,$body,$receipent)
     try {
         $mail->isSMTP();                                     
         $mail->Host       = 'smtp.gmail.com';                     
-        $mail->SMTPAuth   = true;                                 
-        $mail->Username   = 'sharmachirag393@gmail.com';                
-        $mail->Password   = 'bnodlimfjayczfwi';                              
-        $mail->SMTPSecure = 'tls';           
-        $mail->Port       = 587;                              
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'mail@gmail.com';                   
+        $mail->Password   = 'secret';                              
+        $mail->SMTPSecure = 'tls';          
+        $mail->Port       = 587;                                    
 
-        $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
+        $mail->setFrom('mail@gmail.com', 'CartAce');
         $mail->addAddress($receipent);    
 
         $mail->isHTML(true);                                  
@@ -70,14 +70,14 @@ function Register($subject,$body,$receipent)
 
     try {
         $mail->isSMTP();                                           
-        $mail->Host       = 'smtp.gmail.com';                    
+        $mail->Host       = 'smtp.gmail.com';                     
         $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'sharmachirag393@gmail.com';                     
-        $mail->Password   = 'bnodlimfjayczfwi';                              
-        $mail->SMTPSecure = 'tls';       
-        $mail->Port       = 587;                                  
+        $mail->Username   = 'mail@gmail.com';                   
+        $mail->Password   = 'secret';                              
+        $mail->SMTPSecure = 'tls';          
+        $mail->Port       = 587;                                    
 
-        $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
+        $mail->setFrom('mail@gmail.com', 'CartAce');
         $mail->addAddress($receipent);    
 
         $mail->isHTML(true);                                 
@@ -101,14 +101,14 @@ function MsgSend($subject,$body,$receipent)
 
     try {
         $mail->isSMTP();                                           
-        $mail->Host       = 'smtp.gmail.com';                    
+        $mail->Host       = 'smtp.gmail.com';                     
         $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'sharmachirag393@gmail.com';                     
-        $mail->Password   = 'bnodlimfjayczfwi';                              
-        $mail->SMTPSecure = 'tls';       
-        $mail->Port       = 587;                                  
+        $mail->Username   = 'mail@gmail.com';                   
+        $mail->Password   = 'secret';                              
+        $mail->SMTPSecure = 'tls';          
+        $mail->Port       = 587;                                    
 
-        $mail->setFrom('sharmachirag393@gmail.com', 'CartAce');
+        $mail->setFrom('mail@gmail.com', 'CartAce');
         $mail->addAddress($receipent);    
 
         $mail->isHTML(true);                                 
