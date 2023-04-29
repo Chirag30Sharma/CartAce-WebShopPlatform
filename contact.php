@@ -95,6 +95,7 @@ if(isset($_POST['form_contact']))
         $visitor_message = strip_tags($_POST['visitor_message']);
 
         // sending email
+        $admin = 'sharmachirag393@gmail.com';
         $to_admin = $receive_email;
         $subject = $receive_email_subject;
         $message = '
@@ -120,7 +121,7 @@ if(isset($_POST['form_contact']))
 </body></html>
 ';
         $headers = 'From: ' . $visitor_email . "\r\n" .
-                   'Reply-To: ' . $visitor_email . "\r\n" .
+                   'Reply-To: ' . $admin . "\r\n" .
                    'X-Mailer: PHP/' . phpversion() . "\r\n" . 
                    "MIME-Version: 1.0\r\n" . 
                    "Content-Type: text/html; charset=ISO-8859-1\r\n";

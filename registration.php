@@ -161,8 +161,8 @@ if (isset($_POST['form1'])) {
 
 <a href="'.$verify_link.'">'.$verify_link.'</a>';
 
-        $headers = "From: noreply@" . BASE_URL . "\r\n" .
-                   "Reply-To: noreply@" . BASE_URL . "\r\n" .
+        $headers = "From:" .$to. "\r\n" .
+                   "Reply-To: sharmachirag393@gmail.com \r\n" .
                    "X-Mailer: PHP/" . phpversion() . "\r\n" . 
                    "MIME-Version: 1.0\r\n" . 
                    "Content-Type: text/html; charset=ISO-8859-1\r\n";

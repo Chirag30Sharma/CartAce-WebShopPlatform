@@ -27,9 +27,9 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	$querystring = '';
 	
 	// Firstly Append paypal account to querystring
-	$querystring .= "?business=".urlencode($paypal_email)."&";
+	$querystring .= "business=".urlencode($paypal_email)."&";
 	
-	// Append amount& currency (£) to quersytring so it cannot be edited in html
+	// Append amount& currency ($) to quersytring so it cannot be edited in html
 	
 	//The item name and amount can be brought in dynamically by querying the $_POST['item_number'] variable.
 	$querystring .= "item_name=".urlencode($item_name)."&";
@@ -175,9 +175,6 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 		$statement->execute(array($final_quantity,$arr_cart_p_id[$i]));
 
     }
-
-	
-
     
     unset($_SESSION['cart_p_id']);
 	unset($_SESSION['cart_size_id']);
