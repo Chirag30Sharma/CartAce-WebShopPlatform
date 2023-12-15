@@ -40,7 +40,7 @@ Welcome to our CartAce E-commerce website, a user-friendly platform designed for
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/your-username/e-commerce.git
+   git clone https://github.com/Chirag30Sharma/Mini-Project.git
 2. Set up a MySQL database and import the provided SQL file (database.sql) to create the necessary tables.
 3. Configure the database connection in config.php with your database credentials.
    ```bash
